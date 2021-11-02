@@ -20,15 +20,7 @@
 <script lang="ts">
 import { defineComponent, reactive, ref } from "@vue/composition-api";
 import Camera from "./Camera.vue";
-
-export interface IForm {
-  name: string;
-  pictures: string[];
-}
-
-export const validateForm = (form: IForm) => {
-  return form.pictures.length > 0 && form.name.length > 0;
-};
+import { IForm, validateForm } from "~/utils";
 
 export default defineComponent({
     name: "Form",
