@@ -6,7 +6,7 @@
     </div>
     <audio ref="AudioRef"/>
 
-    <Gallery class="absolute bottom-32" :pictures="pictures" />
+    <Gallery class="absolute bottom-32 bg-black z-50 bg-opacity-75" :pictures="pictures" />
 
     <div class="absolute bottom-0 h-32 bg-black w-full flex z-50">
       <div v-if="!hasPictureInMemory" class="w-1/2 flex justify-center">
@@ -24,6 +24,11 @@
           Remove picture
         </button>
       </div>
+      <div class="w-1/2 flex justify-center blur">
+        <button class="w-full hover:bg-gray-900  transition text-white font-bold py-2 px-4" @click="onDone()">
+          Done
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +39,7 @@ import Gallery from "./Gallery.vue";
 
 export default defineComponent({
     name: "Camera",
+    components: { Gallery },
     props: {
         pictures: {
             type: Array,
@@ -69,6 +75,9 @@ export default defineComponent({
         const onRemoved = () => {
             pictureInMemory.value = undefined;
         };
+        const onDone = () => {
+            emit("done");
+        };
         onMounted(() => {
             allowCamera();
         });
@@ -80,8 +89,8 @@ export default defineComponent({
             hasPictureInMemory,
             onSaved,
             onRemoved,
+            onDone,
         };
-    },
-    components: { Gallery }
+    }
 });
 </script>

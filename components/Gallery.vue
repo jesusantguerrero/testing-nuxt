@@ -1,5 +1,5 @@
 <template>
-<div class="w-full h-32 bg-black z-50 bg-opacity-75 flex gap-2 overflow-auto flex-wrap">
+<div class="w-full h-32 flex gap-2 overflow-auto flex-wrap">
     <div v-for="picture in pictures" :key="picture" class="h-full p-2">
       <img :src="picture" alt="" class="h-full cover border border-white rounded-md">
     </div>

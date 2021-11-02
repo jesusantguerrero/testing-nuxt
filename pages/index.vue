@@ -1,21 +1,12 @@
 <template>
-  <Camera :pictures="pictures" @saved="addPicture" />
+  <Form />
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
+import Form from '~/components/template/Form.vue';
 
 export default defineComponent({
-  setup() {
-    const pictures = reactive<string[]>([]);
-    const addPicture = (picture: string) => {
-      pictures.push(picture);
-    }
-
-    return {
-      addPicture,
-      pictures
-    }
-  }
+    components: { Form }
 })
 </script>
