@@ -1,4 +1,5 @@
 # testing-nuxt
+[![codecov](https://codecov.io/gh/jesusantguerrero/testing-nuxt/branch/master/graph/badge.svg?token=S09CS6MT4Z)](https://codecov.io/gh/jesusantguerrero/testing-nuxt)
 
 ## Build Setup
 
