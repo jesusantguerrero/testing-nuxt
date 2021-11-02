@@ -8,5 +8,5 @@ export interface IForm {
 }
 
 export const validateForm = (form: IForm) => {
-  return form.pictures.length > 0 && form.name.length > 0;
+  return form.pictures.length > 0 && form.name.length > 0 && false;
 };
