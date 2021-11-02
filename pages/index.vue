@@ -1,9 +1,21 @@
 <template>
-  <Tutorial/>
+  <Camera :pictures="pictures" @saved="addPicture" />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent, reactive } from '@vue/composition-api'
 
-export default Vue.extend({})
+export default defineComponent({
+  setup() {
+    const pictures = reactive<string[]>([]);
+    const addPicture = (picture: string) => {
+      pictures.push(picture);
+    }
+
+    return {
+      addPicture,
+      pictures
+    }
+  }
+})
 </script>
